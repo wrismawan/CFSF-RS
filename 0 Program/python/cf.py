@@ -53,6 +53,7 @@ class CF(object):
 	    return file_data
 
 	def GIS(self, item_user):
+		
 		return [[self.pearson(self.item_user[i], self.item_user[j]) for j in range(self.max_movie)] for i in range(self.max_movie)]
 
 	def clusterUser(self, user_item):
@@ -78,17 +79,25 @@ class CF(object):
 		#2 Cluster User
 		self.user_cluster = self.clusterUser(self.user_item)
 
+		print self.user_cluster
 		# 3 Smoothing
-		for user in range(len(self.user_item)):
-			cluster = self.getUserCluster(user)
-			print user, cluster
+		for user in range(1,len(self.user_item)):
+			selected_cluster = self.getUserCluster(user)
 			for item in range(len(self.user_item[user])):
-			# 	if (self.user_item[user][item] == 0):
-					
-					
-					
+				if (self.user_item[user][item] == 0):
+					_sum = 0
+					for u in self.user_cluster[selected_cluster]:
+						average_rating_u =  float(sum(self.user_item[int(u)]) - sum([x for x in range(self.max_user)]))  / self.max_movie
+						_sum += self.user_item[int(u)][item] - average_rating_u
 
+					RC = _sum/len(self.user_cluster[selected_cluster])
+					self.user_item[user][item] = RC
+
+		#4 Create iCluster
+		
 
 if __name__ == "__main__":
-	cf = CF(10,10)
+	cf = CF(5,5)
 	cf.run()
+
+	cf.print_matrix("USER-ITEM", cf.user_item)
