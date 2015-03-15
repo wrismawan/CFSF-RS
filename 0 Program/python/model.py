@@ -31,3 +31,21 @@ class Rating(pw.Model):
 	
 	class Meta:
 		database = db
+
+class Gis(pw.Model):
+	id = pw.IntegerField()
+	movie_a = pw.IntegerField()
+	movie_b = pw.IntegerField()
+	similarity_value = pw.DoubleField()
+
+	class Meta:
+		database = db
+
+class Icluster(pw.Model):
+	id = pw.IntegerField()
+	user_id = pw.IntegerField()
+	num_cluster = pw.IntegerField()
+	similarity_value = pw.DoubleField()
+
+	class Meta:
+		database = db

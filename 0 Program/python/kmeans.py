@@ -37,7 +37,7 @@ class kClusterer:
            4. randomly selects the initial centroids
            5. assigns points to clusters associated with those centroids
         """
-        file = open(filename)
+        # file = open(filename)
         self.data = {}
         self.k = k
         self.counter = 0
@@ -50,16 +50,20 @@ class kClusterer:
         #
         # read data from file
         #
-        lines = file.readlines()
-        file.close()
-        header = lines[0].split(',')
+        # lines = file.readlines()
+        # file.close()
+        # header = lines[0].split(',')
+
+        lines = filename
+        header = lines[0]
         self.cols = len(header)
         self.data = [[] for i in range(len(header))]
         # we are storing the data by column.
         # For example, self.data[0] is the data from column 0.
         # self.data[0][10] is the column 0 value of item 10.
         for line in lines[1:]:
-            cells = line.split(',')
+            # cells = line.split(',')
+            cells = line
             toggle = 0
             for cell in range(self.cols):
                 if toggle == 0:
