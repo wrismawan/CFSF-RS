@@ -1,3 +1,6 @@
-import numpy
+from numpy import corrcoef
 
-print corrcoef([1,2,3],[3,2,1])
+l = [x for x in range(1,10)]
+
+print l
+print sum(l[1:])

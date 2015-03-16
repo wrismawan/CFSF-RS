@@ -1,6 +1,8 @@
 import math
 import random 
 import csv
+from numpy import corrcoef
+
 
 def getMedian(alist):
     """get median of list"""
@@ -28,7 +30,7 @@ class kClusterer:
     not used in the clustering. The other columns contain numeric data
     """
     
-    def __init__(self, filename, k):
+    def __init__(self, data_input, k):
         """ k is the number of clusters to make
         This init method:
            1. reads the data from the file named filename
@@ -54,7 +56,7 @@ class kClusterer:
         # file.close()
         # header = lines[0].split(',')
 
-        lines = filename
+        lines = data_input
         header = lines[0]
         self.cols = len(header)
         self.data = [[] for i in range(len(header))]
@@ -119,12 +121,16 @@ class kClusterer:
 
     def euclideanDistance(self, i, j):
         """ compute distance of point i from centroid j"""
-        sumSquares = 0
-        for k in range(1, self.cols):
-            sumSquares += (self.data[k][i] - self.centroids[j][k-1])**2
-        return math.sqrt(sumSquares)
-
-
+        # sumSquares = 0
+        # for k in range(1, self.cols):
+        #     sumSquares += (self.data[k][i] - self.centroids[j][k-1])**2
+        # return math.sqrt(sumSquares)
+        dist = corrcoef(self.data[i], self.data[j])[0][1]
+        print 'distance : ',i,'-',j,' : ', dist
+        if (not math.isnan(dist)):
+            return dist
+        else:
+            return 0
 
     def kCluster(self):
         """the method that actually performs the clustering
@@ -139,8 +145,10 @@ class kClusterer:
             self.iterationNumber += 1
             self.updateCentroids()
             self.assignPointsToCluster()
+            print 'clustering - iteration : ',self.iterationNumber
             #
             # we are done if fewer than 1% of the points change clusters
+            #
             #
             if float(self.pointsChanged) / len(self.memberOf) <  0.01:
                 done = True
