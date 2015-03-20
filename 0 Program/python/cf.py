@@ -11,7 +11,7 @@ from mylib import *
 i_cluster = collections.namedtuple("iCluster","sim no")
 
 class CF(object):
-
+	
 	def __init__(self, max_user, max_movie, K, M):
 		self.K 			= K
 		self.M 			= M
@@ -22,13 +22,12 @@ class CF(object):
 		self.matrix_GIS = [[0 for x in range(self.max_movie)] for x in range(self.max_movie)]
 		self.iCluster   = [[i_cluster(-1,c) for c in range(self.K)] for u in range(self.max_user)]
 
-		rating_query 	= Rating.select().where(Rating.user_id < self.max_user).where(Rating.movie_id < self.max_movie).order_by(Rating.movie_id).limit(self.max_movie)
+		rating_query 	= Rating_base.select().where(Rating_base.user_id < self.max_user).where(Rating_base.movie_id < self.max_movie).order_by(Rating_base.movie_id).limit(self.max_movie)
 		for r in rating_query:
 			self.item_user[r.movie_id][r.user_id] = r.rating_value
 			self.user_item[r.user_id][r.movie_id] = r.rating_value
 
-
-	
+	# def setParam(self, K, M, )
 
 	def GIS(self, item_user):
 		for i in range(1,self.max_movie):		
@@ -48,15 +47,19 @@ class CF(object):
 					gis.save()
 					# gis = Gis(movie_a=j, movie_b=i, similarity_value=self.matrix_GIS[i][j])
 					# gis.save()
+		return self.matrix_GIS
 
 	def clusterUser(self, user_item):
 		cluster = kClusterer(self.user_item, self.K)
 		cluster.kCluster()
 		user_cluster = cluster.listCluster()
-		writeToCSV(listData=user_cluster, fileName='output/user_cluster.csv')
+		
 		return user_cluster
 
 	def getUserCluster(self, user):
+		"""
+		get number cluster of user
+		"""
 		c = 0
 		for cluster in self.user_cluster:
 			if (user in cluster):
@@ -134,7 +137,12 @@ class CF(object):
 			selected_cluster = self.getUserCluster(user)
 			for item in range(1,len(self.user_item[user])):
 				if (self.user_item[user][item] == 0):
-					self.user_item[user][item] = self.calc_RCui(num_cluster=selected_cluster, item=item)
+					r = self.calc_RCui(num_cluster=selected_cluster, item=item)
+					if (r < 1):
+						self.user_item[user][item] = 1
+					else:
+						self.user_item[user][item] = r
+					
 
 	def createICluster(self):
 		for user in range(self.max_user):
@@ -153,50 +161,11 @@ class CF(object):
 
 			self.iCluster[user] = sorted(self.iCluster[user],reverse=True)
 
-	def offline(self):
-		"""
-		#1 Create GIS (Global Item Similarity)
-		Find similarity between the movie Correlation Coefficient Formula
-		"""
-		self.matrix_GIS = self.GIS(self.item_user)
+	
 
-		"""
-		#2 Cluster User
-		Create user cluster using K-Means.
-		"""
-		self.user_cluster = self.clusterUser(self.user_item)
-
-		"""
-		#3 Smoothing
-		Smoothing rating, if user haven't rated movie, then set value by using Rcui formula.
-		"""
-		self.doSmoothing()
-		
-		"""
-		#4 Create iCluster
-		Compute similarity value between user to k cluster and then sort the result by descending (high-to-low)
-		each user has set of {number cluster with similarity value}
-		e.g u = {C1 : 3.4, C3 : 1.4, C2 : 0.5}
-		"""
-		self.createICluster()
-
-		writeToCSV(listData=self.user_item, fileName='output/user_item_smoothed.csv');
-
-
-	def construct_local_matrix(self, active_user):
-		"""
-		#5 Constructing a local MxK item-user matrix
-		This step is for online mode purpose. 
-		"""		
-		self.top_K = self.create_top_K(active_user)
-		self.top_M = self.create_top_M()
-
-		print 'Top K'
-		for k in self.top_K[:10]:
-			print k
-		print 'Top M'
-		print self.top_M
-
+	"""
+	===================== Fusing ========================
+	"""
 	def calc_SIR(self, active_user, active_item):
 		pembilang = penyebut = 0
 		for s in range(1,self.M):
@@ -253,7 +222,10 @@ class CF(object):
 				pembilang += w * sim * rating_current_user
 				penyebut += w * sim
 
-		return pembilang / penyebut
+		if (penyebut == 0.0):
+			return 0
+		else:
+			return pembilang / penyebut
 
 
 	def calc_euclidean(self, current_item, active_item, current_user, active_user):
@@ -265,43 +237,101 @@ class CF(object):
 
 	def request(self, active_user, active_item):
 		# parameter fusing
-		g = .01
-		l = .02
+		g = .05
+		l = .002
 
 		# calculate SIR' SUR' and SUIR' for predicition rating
 		SIR = self.calc_SIR(active_user,active_item)
 		SUR = self.calc_SUR(active_user, active_item)
 		SUIR = self.calc_SUIR(active_user, active_item)
-		print 'SIR : ',SIR
-		print 'SUR : ',SUR
-		print 'SUIR : ',SUIR
+
+		prediction = ((1 - g) * (1 - l) * SIR) + ((1 - g) * l * SUR) + (g * SUIR)
+
+		return {"SIR" : SIR, "SUR" : SUR, "SUIR" : SUIR, "prediction" : prediction}
+
+	"""
+	===================== END OF Fusing ========================
+	"""
+
+	def learning(self):
+		"""
+		#1 Create GIS (Global Item Similarity)
+		Find similarity between the movie Correlation Coefficient Formula
+		""" 
+		self.matrix_GIS = self.GIS(self.item_user)
+
+		"""
+		#2 Cluster User
+		Create user cluster using K-Means.
+		"""
+		self.user_cluster = self.clusterUser(self.user_item)
+
+		"""
+		#3 Smoothing
+		Smoothing rating, if user haven't rated movie, then set value by using Rcui formula.
+		"""
+		self.doSmoothing()
 		
-		prediction = ((1 - g) * (1 - l) * SIR) + ((1 - g) * l * SUR) * (g * SUIR)
+		"""
+		#4 Create iCluster
+		Compute similarity value between user to k cluster and then sort the result by descending (high-to-low)
+		each user has set of {number cluster with similarity value}
+		e.g u = {C1 : 3.4, C3 : 1.4, C2 : 0.5}
+		"""
+		self.createICluster()
 
-		print 'Prediction : ', prediction
-		print ""
+		writeToCSV(listData=self.user_item, fileName='output/user_item_smoothed.csv');
+		writeToCSV(listData=self.matrix_GIS, fileName='output/GIS.csv')
+		writeToCSV(listData=self.user_cluster, fileName='output/user_cluster.csv')
 
-	def online(self):
-		active_user = 1
-		self.construct_local_matrix(active_user=active_user)
 
-		
-		self.request(active_user=active_user, active_item=5)
-		self.request(active_user=active_user, active_item=3)
-		self.request(active_user=active_user, active_item=2)
+	def construct_local_matrix(self, active_user):
+		self.user_cluster = readFromCSV('output/user_cluster.csv')
+		self.user_item = readFromCSV('output/user_item_smoothed.csv')
+		self.matrix_GIS = readFromCSV('output/GIS.csv')
+
+		"""
+		#5 Constructing a local MxK item-user matrix
+		This step is for online mode purpose. 
+		"""
+
+		self.top_K = self.create_top_K(active_user)
+		self.top_M = self.create_top_M()
+
+		# print 'Top K'
+		# for k in self.top_K[:10]:
+		# 	print k
+		# print 'Top M'
+		# print self.top_M
 
 	def run(self):
-		# self.offline()
-		self.user_item = readFromCSV('output/user_item_smoothed.csv')
-		self.user_cluster = readFromCSV('output/user_cluster.csv')
-
 		self.online()
 
+
 if __name__ == "__main__":
-	cf = CF(max_user=50,max_movie=50,K=5,M=10)
-	cf.run()
-	# print_matrix("USER-ITEM", cf.user_item)
-	# cf.print_matrix("ITEM-USER", cf.item_user)
+	cf = CF(max_user=100,max_movie=200,K=10,M=20)
+	# cf.learning()
+	
+	"""TESTING"""
+	active_user = 1
+	cf.construct_local_matrix(active_user=active_user)
+	
+	max_test = 20
+	sum_mae = 0
+	rating_query = Rating_test.select().where(Rating_test.user_id==active_user).order_by(Rating_test.user_id.asc()).limit(max_test)
+	for r in rating_query:
+		result = cf.request(active_user=active_user, active_item=r.movie_id)
+		print "user = {user} | movie = {movie}".format(user=active_user, movie=r.movie_id)
+		print "SIR = {SIR} | SUR = {SUR} | SUIR = {SUIR}".format(SIR=result['SIR'],SUR=result['SUR'],SUIR=result['SUIR'])
+		print "real = {real} | prediction = {pred}\n".format(real=r.rating_value,pred=result['prediction'])
+		sum_mae += abs(r.rating_value - result['prediction'])
+
+	MAE = float(sum_mae) / max_test
+	print "MAE = {mae}".format(mae=MAE)
+
+
+
+
 
 
 
