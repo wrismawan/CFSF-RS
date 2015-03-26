@@ -180,6 +180,7 @@ public class Kmeans {
                         cluster = centroid1.getCenteroid().getCluster();
                     }
                 }
+                
                 isStillMoving = false;
                 if (user1.getCluster() != cluster) {
                     user1.setCluster(cluster);
