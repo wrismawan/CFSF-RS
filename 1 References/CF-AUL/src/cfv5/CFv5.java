@@ -3,11 +3,11 @@ package cfv5;
 public class CFv5 {
 
     public static void main(String[] args) throws Exception {
-/**
- * Proses Trainnging :
- * -Clustering
- * -Data Smoothing
- */
+        /**
+         * Proses Trainnging :
+         * -Clustering
+         * -Data Smoothing
+         */
         //Proses Custering
         Kmeans K=new Kmeans(1);
         K.play();
@@ -17,13 +17,13 @@ public class CFv5 {
         D.play();
         D.setCluster(K.getHasilCluster());
         
-/**
- * Proses Testing
- * -Proses Neighbor Pre-Selection
- * -Proses Neihbor Selection
- * -Proses Prediksi
- * -Proses Evaluasi Sistem
- */
+        /**
+         * Proses Testing
+         * -Proses Neighbor Pre-Selection
+         * -Proses Neihbor Selection
+         * -Proses Prediksi
+         * -Proses Evaluasi Sistem
+         */
         //Proses Neighbor Pre-Selection
         NeighborPreSelection N1=new NeighborPreSelection();
         N1.setCluster(D.getCluster());
