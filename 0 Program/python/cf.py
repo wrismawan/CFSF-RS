@@ -15,8 +15,8 @@ class CF(object):
 	def __init__(self, max_user, max_movie, K, M):
 		self.K 			= K
 		self.M 			= M
-		self.max_user   = max_user
-		self.max_movie  = max_movie
+		self.max_user   = max_user+1
+		self.max_movie  = max_movie+1
 		self.item_user  = [[0 for x in range(self.max_user)] for x in range(self.max_movie)]
 		self.user_item  = [[u if m==0 else 0 for m in range(self.max_movie)] for u in range(self.max_user)]
 		self.matrix_GIS = [[0 for x in range(self.max_movie)] for x in range(self.max_movie)]
@@ -26,8 +26,6 @@ class CF(object):
 		for r in rating_query:
 			self.item_user[r.movie_id][r.user_id] = r.rating_value
 			self.user_item[r.user_id][r.movie_id] = r.rating_value
-
-	# def setParam(self, K, M, )
 
 	def GIS(self, item_user):
 		for i in range(1,self.max_movie):		
@@ -57,9 +55,6 @@ class CF(object):
 		return user_cluster
 
 	def getUserCluster(self, user):
-		"""
-		get number cluster of user
-		"""
 		c = 0
 		for cluster in self.user_cluster:
 			if (user in cluster):
@@ -67,7 +62,11 @@ class CF(object):
 			c += 1
 
 	def average_rating_user(self,u):
-		return float(sum(self.user_item[u][1:])) / self.max_movie
+		count_rating = self.max_movie - self.user_item[u].count(0) - 1
+		if (count_rating == 0):
+			return 0
+		else:
+			return float(sum(self.user_item[u][1:])) / count_rating
 	
 	def calc_RCui(self, num_cluster,item):
 		RCui = 0
@@ -107,7 +106,13 @@ class CF(object):
 						pembilang += w * (rating_user - av_user_rating) * (rating_active_user - av_active_user_rating)
 
 					#compute similarity(active_user, user)
-					sim = pembilang / (math.sqrt(sum_rating_user_2) * math.sqrt(sum_rating_active_user_2))
+					penyebut = (math.sqrt(sum_rating_user_2) * math.sqrt(sum_rating_active_user_2))
+					print 'penyebut : > ',penyebut
+					if (penyebut == 0):
+						sim = 0
+					else:
+						sim = pembilang / penyebut
+					
 					top_K.append({"sim" : sim, "user" : user})
 
 					if (len(top_K) == self.K):
@@ -137,13 +142,11 @@ class CF(object):
 			selected_cluster = self.getUserCluster(user)
 			for item in range(1,len(self.user_item[user])):
 				if (self.user_item[user][item] == 0):
-					r = self.calc_RCui(num_cluster=selected_cluster, item=item)
-					if (r < 1):
-						self.user_item[user][item] = 1
-					else:
-						self.user_item[user][item] = r
+					av = self.average_rating_user(user)
+					rcui = self.calc_RCui(num_cluster=selected_cluster, item=item)
+					# print '====>',av,'-',rcui
+					self.user_item[user][item] = av + rcui
 					
-
 	def createICluster(self):
 		for user in range(self.max_user):
 			av_rating = self.average_rating_user(user)
@@ -309,14 +312,16 @@ class CF(object):
 
 
 if __name__ == "__main__":
-	cf = CF(max_user=100,max_movie=200,K=10,M=20)
+	cf = CF(max_user=50,max_movie=50,K=10,M=10)
 	# cf.learning()
 	
-	"""TESTING"""
+	# print_matrix("USER-ITEM",cf.user_item)
+	
+	# """TESTING"""
 	active_user = 1
 	cf.construct_local_matrix(active_user=active_user)
 	
-	max_test = 20
+	max_test = 15
 	sum_mae = 0
 	rating_query = Rating_test.select().where(Rating_test.user_id==active_user).order_by(Rating_test.user_id.asc()).limit(max_test)
 	for r in rating_query:
