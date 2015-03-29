@@ -43,8 +43,6 @@ class CF(object):
 					# if (self.matrix_GIS[i][j] > 0):
 					gis = Gis(movie_a=i, movie_b=j, similarity_value=self.matrix_GIS[i][j])
 					gis.save()
-					# gis = Gis(movie_a=j, movie_b=i, similarity_value=self.matrix_GIS[i][j])
-					# gis.save()
 		return self.matrix_GIS
 
 	def clusterUser(self, user_item):
@@ -240,8 +238,8 @@ class CF(object):
 
 	def request(self, active_user, active_item):
 		# parameter fusing
-		g = .05
-		l = .002
+		g = .4
+		l = .6
 
 		# calculate SIR' SUR' and SUIR' for predicition rating
 		SIR = self.calc_SIR(active_user,active_item)
@@ -312,7 +310,7 @@ class CF(object):
 
 
 if __name__ == "__main__":
-	cf = CF(max_user=50,max_movie=50,K=10,M=10)
+	cf = CF(max_user=100,max_movie=200,K=10,M=20)
 	# cf.learning()
 	
 	# print_matrix("USER-ITEM",cf.user_item)
@@ -333,17 +331,6 @@ if __name__ == "__main__":
 
 	MAE = float(sum_mae) / max_test
 	print "MAE = {mae}".format(mae=MAE)
-
-
-
-
-
-
-
-
-
-
-
 
 
 

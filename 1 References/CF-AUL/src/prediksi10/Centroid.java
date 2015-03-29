@@ -1,4 +1,4 @@
-package cfv5;
+package prediksi10;
 
 public class Centroid {
     private User center;

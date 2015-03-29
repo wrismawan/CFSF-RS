@@ -1,4 +1,4 @@
-package cfv5;
+package prediksi10;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,6 +6,15 @@ import java.util.HashMap;
 public class User {
     private int user_id;
     private int cluster=-1;
+    private double rua=0;
+
+    public double getRua() {
+        return rua;
+    }
+
+    public void setRua(double rua) {
+        this.rua = rua;
+    }
     private ArrayList<Integer> key;
     private HashMap<Integer,Double> itemList;
 
