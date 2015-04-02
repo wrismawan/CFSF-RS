@@ -45,8 +45,9 @@ class CF(object):
 					# if (self.matrix_GIS[i][j] > 0):
 					gis = Gis(movie_a=i, movie_b=j, similarity_value=self.matrix_GIS[i][j])
 					gis.save()
-					# gis = Gis(movie_a=j, movie_b=i, similarity_value=self.matrix_GIS[i][j])
-					# gis.save()
+					gis = Gis(movie_a=j, movie_b=i, similarity_value=self.matrix_GIS[i][j])
+					gis.save()
+
 		return self.matrix_GIS
 
 	def clusterUser(self, user_item):
@@ -264,13 +265,13 @@ class CF(object):
 		#2 Cluster User
 		Create user cluster using K-Means.
 		"""
-		self.user_cluster = self.clusterUser(self.user_item)
+		# self.user_cluster = self.clusterUser(self.user_item)
 
 		"""
 		#3 Smoothing
 		Smoothing rating, if user haven't rated movie, then set value by using Rcui formula.
 		"""
-		self.doSmoothing()
+		# self.doSmoothing()
 		
 		"""
 		#4 Create iCluster
@@ -278,11 +279,11 @@ class CF(object):
 		each user has set of {number cluster with similarity value}
 		e.g u = {C1 : 3.4, C3 : 1.4, C2 : 0.5}
 		"""
-		self.createICluster()
+		# self.createICluster()
 
-		writeToCSV(listData=self.user_item, fileName='output/user_item_smoothed.csv');
-		writeToCSV(listData=self.matrix_GIS, fileName='output/GIS.csv')
-		writeToCSV(listData=self.user_cluster, fileName='output/user_cluster.csv')
+		# writeToCSV(listData=self.user_item, fileName='output/user_item_smoothed.csv');
+		# writeToCSV(listData=self.matrix_GIS, fileName='output/GIS.csv')
+		# writeToCSV(listData=self.user_cluster, fileName='output/user_cluster.csv')
 
 
 	def construct_local_matrix(self, active_user):
@@ -309,25 +310,25 @@ class CF(object):
 
 
 if __name__ == "__main__":
-	cf = CF(max_user=100,max_movie=200,K=10,M=20)
-	# cf.learning()
+	cf = CF(max_user=10,max_movie=10,K=5,M=8)
+	cf.learning()
 	
 	"""TESTING"""
-	active_user = 1
-	cf.construct_local_matrix(active_user=active_user)
+	# active_user = 1
+	# cf.construct_local_matrix(active_user=active_user)
 	
-	max_test = 20
-	sum_mae = 0
-	rating_query = Rating_test.select().where(Rating_test.user_id==active_user).order_by(Rating_test.user_id.asc()).limit(max_test)
-	for r in rating_query:
-		result = cf.request(active_user=active_user, active_item=r.movie_id)
-		print "user = {user} | movie = {movie}".format(user=active_user, movie=r.movie_id)
-		print "SIR = {SIR} | SUR = {SUR} | SUIR = {SUIR}".format(SIR=result['SIR'],SUR=result['SUR'],SUIR=result['SUIR'])
-		print "real = {real} | prediction = {pred}\n".format(real=r.rating_value,pred=result['prediction'])
-		sum_mae += abs(r.rating_value - result['prediction'])
+	# max_test = 20
+	# sum_mae = 0
+	# rating_query = Rating_test.select().where(Rating_test.user_id==active_user).order_by(Rating_test.user_id.asc()).limit(max_test)
+	# for r in rating_query:
+	# 	result = cf.request(active_user=active_user, active_item=r.movie_id)
+	# 	print "user = {user} | movie = {movie}".format(user=active_user, movie=r.movie_id)
+	# 	print "SIR = {SIR} | SUR = {SUR} | SUIR = {SUIR}".format(SIR=result['SIR'],SUR=result['SUR'],SUIR=result['SUIR'])
+	# 	print "real = {real} | prediction = {pred}\n".format(real=r.rating_value,pred=result['prediction'])
+	# 	sum_mae += abs(r.rating_value - result['prediction'])
 
-	MAE = float(sum_mae) / max_test
-	print "MAE = {mae}".format(mae=MAE)
+	# MAE = float(sum_mae) / max_test
+	# print "MAE = {mae}".format(mae=MAE)
 
 
 
