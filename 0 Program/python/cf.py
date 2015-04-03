@@ -27,6 +27,9 @@ class CF(object):
 			self.item_user[r.movie_id][r.user_id] = r.rating_value
 			self.user_item[r.user_id][r.movie_id] = r.rating_value
 
+	"""
+	==================== Global Item Similarity ====================
+	"""
 	def GIS(self, item_user):
 		for i in range(1,self.max_movie):		
 			for j in range(1,i):
@@ -44,6 +47,47 @@ class CF(object):
 					gis = Gis(movie_a=i, movie_b=j, similarity_value=self.matrix_GIS[i][j])
 					gis.save()
 		return self.matrix_GIS
+
+	"""
+	===================== SMOOTHING ==============================
+	"""
+	def calc_RCui(self, num_cluster,item):
+		RCui = 0
+		len_cluster = len(self.user_cluster[num_cluster])
+		for u in self.user_cluster[num_cluster]:
+			RCui += (self.user_item[u][item] - self.average_rating_user(u)) / len_cluster
+		return RCui
+
+	def doSmoothing(self):
+		for user in range(1,len(self.user_item)):
+			selected_cluster = self.getUserCluster(user)
+			for item in range(1,len(self.user_item[user])):
+				if (self.user_item[user][item] == 0):
+					av = self.average_rating_user(user)
+					rcui = self.calc_RCui(num_cluster=selected_cluster, item=item)
+					# print '====>',av,'-',rcui
+					self.user_item[user][item] = av + rcui
+					
+	def createICluster(self):
+		for user in range(self.max_user):
+			av_rating = self.average_rating_user(user)
+			for cluster in range(self.K):
+				pembilang = sum_rui = sum_rcui = 0
+				for item in range(self.max_movie):
+					pembilang +=  self.calc_RCui(cluster, item) * (self.user_item[user][item] - av_rating)
+					sum_rcui += self.calc_RCui(cluster, item) ** 2 
+					sum_rui += (self.user_item[user][item] - av_rating) **2
+				sim = pembilang / ((math.sqrt(sum_rcui) * math.sqrt(sum_rui)) + .00000000001)
+				self.iCluster[user][cluster] = self.iCluster[user][cluster]._replace(sim = sim)
+
+				#save to database
+				Icluster(user_id=user, num_cluster=cluster,similarity_value=sim).save()
+
+			self.iCluster[user] = sorted(self.iCluster[user],reverse=True)
+
+	"""
+	======================== HELPER ======================
+	"""
 
 	def clusterUser(self, user_item):
 		cluster = kClusterer(self.user_item, self.K)
@@ -66,13 +110,9 @@ class CF(object):
 		else:
 			return float(sum(self.user_item[u][1:])) / count_rating
 	
-	def calc_RCui(self, num_cluster,item):
-		RCui = 0
-		len_cluster = len(self.user_cluster[num_cluster])
-		for u in self.user_cluster[num_cluster]:
-			RCui += (self.user_item[u][item] - self.average_rating_user(u)) / len_cluster
-		return RCui
-
+	"""
+	=================== CREATE TOP MxK LOCAL MATRIX ========================
+	"""
 	def create_top_K(self,active_user):
 		top_K = []
 		self.w = .2
@@ -132,41 +172,12 @@ class CF(object):
 
 			if (len(top_m) == self.M):
 				break
-		
 		return top_m
 
-	def doSmoothing(self):
-		for user in range(1,len(self.user_item)):
-			selected_cluster = self.getUserCluster(user)
-			for item in range(1,len(self.user_item[user])):
-				if (self.user_item[user][item] == 0):
-					av = self.average_rating_user(user)
-					rcui = self.calc_RCui(num_cluster=selected_cluster, item=item)
-					# print '====>',av,'-',rcui
-					self.user_item[user][item] = av + rcui
-					
-	def createICluster(self):
-		for user in range(self.max_user):
-			av_rating = self.average_rating_user(user)
-			for cluster in range(self.K):
-				pembilang = sum_rui = sum_rcui = 0
-				for item in range(self.max_movie):
-					pembilang +=  self.calc_RCui(cluster, item) * (self.user_item[user][item] - av_rating)
-					sum_rcui += self.calc_RCui(cluster, item) ** 2 
-					sum_rui += (self.user_item[user][item] - av_rating) **2
-				sim = pembilang / ((math.sqrt(sum_rcui) * math.sqrt(sum_rui)) + .00000000001)
-				self.iCluster[user][cluster] = self.iCluster[user][cluster]._replace(sim = sim)
-
-				#save to database
-				Icluster(user_id=user, num_cluster=cluster,similarity_value=sim).save()
-
-			self.iCluster[user] = sorted(self.iCluster[user],reverse=True)
-
-	
-
 	"""
-	===================== Fusing ========================
+	===================== FUSING / PREDICTION ========================
 	"""
+
 	def calc_SIR(self, active_user, active_item):
 		pembilang = penyebut = 0
 		for s in range(1,self.M):
@@ -228,32 +239,13 @@ class CF(object):
 		else:
 			return pembilang / penyebut
 
-
-	def calc_euclidean(self, current_item, active_item, current_user, active_user):
-		sim_item = Gis().get(Gis.movie_a == current_item and Gis.movie_b == active_item).similarity_value
-		sim_user = corrcoef(self.user_item[current_user], self.user_item[active_user])[0][1]
-
-		return (sim_item * sim_user) / sqrt(sim_item**2 + sim_user**2)
-
-
-	def request(self, active_user, active_item):
-		# parameter fusing
-		g = .4
-		l = .6
-
-		# calculate SIR' SUR' and SUIR' for predicition rating
-		SIR = self.calc_SIR(active_user,active_item)
-		SUR = self.calc_SUR(active_user, active_item)
-		SUIR = self.calc_SUIR(active_user, active_item)
-
-		prediction = ((1 - g) * (1 - l) * SIR) + ((1 - g) * l * SUR) + (g * SUIR)
-
-		return {"SIR" : SIR, "SUR" : SUR, "SUIR" : SUIR, "prediction" : prediction}
-
 	"""
-	===================== END OF Fusing ========================
+	======================= LEARNING & TESTING ===========================
 	"""
 
+	def clustering(self):
+		self.user_cluster = self.clusterUser(self.user_item)
+		
 	def learning(self):
 		"""
 		#1 Create GIS (Global Item Similarity)
@@ -299,15 +291,25 @@ class CF(object):
 		self.top_K = self.create_top_K(active_user)
 		self.top_M = self.create_top_M()
 
-		# print 'Top K'
-		# for k in self.top_K[:10]:
-		# 	print k
-		# print 'Top M'
-		# print self.top_M
+	def calc_euclidean(self, current_item, active_item, current_user, active_user):
+		sim_item = Gis().get(Gis.movie_a == current_item and Gis.movie_b == active_item).similarity_value
+		sim_user = corrcoef(self.user_item[current_user], self.user_item[active_user])[0][1]
 
-	def run(self):
-		self.online()
+		return (sim_item * sim_user) / sqrt(sim_item**2 + sim_user**2)
 
+		def request(self, active_user, active_item):
+		# parameter fusing
+		g = .4
+		l = .6
+
+		# calculate SIR' SUR' and SUIR' for predicition rating
+		SIR = self.calc_SIR(active_user,active_item)
+		SUR = self.calc_SUR(active_user, active_item)
+		SUIR = self.calc_SUIR(active_user, active_item)
+
+		prediction = ((1 - g) * (1 - l) * SIR) + ((1 - g) * l * SUR) + (g * SUIR)
+
+		return {"SIR" : SIR, "SUR" : SUR, "SUIR" : SUIR, "prediction" : prediction}
 
 if __name__ == "__main__":
 	cf = CF(max_user=100,max_movie=200,K=10,M=20)
@@ -315,7 +317,7 @@ if __name__ == "__main__":
 	
 	# print_matrix("USER-ITEM",cf.user_item)
 	
-	# """TESTING"""
+	"""===============TESTING============="""
 	active_user = 1
 	cf.construct_local_matrix(active_user=active_user)
 	
