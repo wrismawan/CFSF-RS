@@ -1,4 +1,4 @@
-package cfv5;
+package prediksi10;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,7 @@ public class Koneksi {
             System.out.println(e.getMessage());
         }
         try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost/cf_db_coba", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/cf_db", "root", "");
             statement = con.createStatement();
         }catch(Exception e){
             System.out.println(e.getMessage());
