@@ -12,9 +12,10 @@ i_cluster = collections.namedtuple("iCluster","sim no")
 
 class CF(object):
 	
-	def __init__(self, max_user, max_movie, K, M):
+	def __init__(self, max_user, max_movie, C, K, M):
 		self.K 			= K
 		self.M 			= M
+		self.C 			= C
 		self.max_user   = max_user+1
 		self.max_movie  = max_movie+1
 		self.item_user  = [[0 for x in range(self.max_user)] for x in range(self.max_movie)]
@@ -47,12 +48,12 @@ class CF(object):
 						gis.save()
 		return self.matrix_GIS
 
-	def clusterUser(self, user_item):
-		cluster = kClusterer(self.user_item, self.K)
+	def clusterUser(self):
+		cluster = kClusterer(self.user_item, self.C)
 		cluster.kCluster()
-		user_cluster = cluster.listCluster()
-		
-		return user_cluster
+		self.user_cluster = cluster.listCluster()
+		writeToCSV(listData=self.user_cluster, fileName='output/user_cluster.csv')
+
 
 	def getUserCluster(self, user):
 		c = 0
@@ -261,7 +262,7 @@ class CF(object):
 		#1 Create GIS (Global Item Similarity)
 		Find similarity between the movie Correlation Coefficient Formula
 		""" 
-		self.matrix_GIS = self.GIS(self.item_user)
+		# self.matrix_GIS = self.GIS(self.item_user)
 
 		"""
 		#2 Cluster User
@@ -307,14 +308,13 @@ class CF(object):
 		# print 'Top M'
 		# print self.top_M
 
-	def run(self):
-		self.online()
+	
 
 
 if __name__ == "__main__":
-	cf = CF(max_user=10,max_movie=1682,K=5,M=8)
-	cf.learning()
+	cf = CF(max_user=943,max_movie=1682,C=50,K=5,M=8)
 	
+	cf.clusterUser()
 	# print_matrix("USER-ITEM",cf.user_item)
 	
 	# """TESTING"""
