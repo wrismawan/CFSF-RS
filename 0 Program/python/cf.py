@@ -1,62 +1,3 @@
-from cosine_similarity import cosine_sim
-from sample_data import *
-from model import *
-import peewee as pw
-import json
-from math import sqrt
-
-
-def pearson(x,y):
-	n = len(x)
-	sum_xy = 0
-	sum_x2 = 0
-	sum_y2 = 0
-	sum_x = sum(x)
-	sum_y = sum(y)
-	for i in range(n):
-		sum_xy += x[i]*y[i]
-		sum_x2 += x[i]**2
-		sum_y2 += y[i]**2
-
-	pembilang = sum_xy - ((sum_x * sum_y)/n)
-	penyebut = sqrt(sum_x2 - ((sum_x**2)/n)) * sqrt(sum_y2 - ((sum_y**2)/n))
-
-	if (penyebut > 0):
-		return round(pembilang/penyebut,3)
-	else:
-		return 0
-
-def print_matrix(title, matrix):
-	print "---- %s ----"%title
-	for row in matrix:
-		print row
-
-def main():
-	max_user = 10
-	max_movie = 10
-
-	item_user = [[0 for x in range(max_user)] for x in range(max_movie)]
-	user_item = [list(x) for x in zip(*item_user)]
-
-	rating_query = Rating.select().where(Rating.user_id < max_user).where(Rating.movie_id < max_movie).order_by(Rating.movie_id).limit(max_movie)
-	
-	for r in rating_query:
-		item_user[r.movie_id][r.user_id] = r.rating_value
-		user_item[r.user_id][r.movie_id] = r.rating_value
-
-	GIS = [[0 for x in range(max_movie)] for x in range(max_movie)]
-	for i in range(max_movie):
-		for j in range(max_movie):
-			GIS[i][j] = pearson(item_user[i], item_user[j])
-
-
-	print_matrix('Item-User Matrix',item_user)
-	print_matrix('User-Item Matrix',user_item)
-	print_matrix('GIS', GIS)
-
-if __name__ == "__main__":
-	main()
-=======
 from model import *
 import peewee as pw
 from math import sqrt, isnan
@@ -77,7 +18,7 @@ class CF(object):
 		self.max_user   = max_user+1
 		self.max_movie  = max_movie+1
 		self.item_user  = [[0 for x in range(self.max_user)] for x in range(self.max_movie)]
-		self.user_item  = [[u if m==0 else 0 for m in range(self.max_movie)] for u in range(self.max_user)]
+		self.user_item  = [[u if m==0 elslse 0 for m in range(self.max_movie)] for u in range(self.max_user)]
 		self.matrix_GIS = [[0 for x in range(self.max_movie)] for x in range(self.max_movie)]
 		self.iCluster   = [[i_cluster(-1,c) for c in range(self.K)] for u in range(self.max_user)]
 
@@ -99,18 +40,15 @@ class CF(object):
 						self.matrix_GIS[j][i] = 0
 					print i, '--', j , ' : ', self.matrix_GIS[i][j]
 					# save to db
-					# if (self.matrix_GIS[i][j] > 0):
-					gis = Gis(movie_a=i, movie_b=j, similarity_value=self.matrix_GIS[i][j])
-					gis.save()
-					# gis = Gis(movie_a=j, movie_b=i, similarity_value=self.matrix_GIS[i][j])
-					# gis.save()
+					if (self.matrix_GIS[i][j] > 0):
+						gis = Gis(movie_a=i, movie_b=j, similarity_value=self.matrix_GIS[i][j])
+						gis.save()
 		return self.matrix_GIS
 
 	def clusterUser(self, user_item):
 		cluster = kClusterer(self.user_item, self.K)
 		cluster.kCluster()
 		user_cluster = cluster.listCluster()
-		
 		return user_cluster
 
 	def getUserCluster(self, user):
@@ -145,6 +83,9 @@ class CF(object):
 				if (user != active_user):
 					pembilang = sum_rating_user = sum_rating_active_user = sum_rating_user_2 = sum_rating_active_user_2 = 0
 					for item in range(1,self.max_movie):
+
+						
+
 						rating_user = self.user_item[user][item]
 						rating_active_user = self.user_item[active_user][item]
 
@@ -181,19 +122,15 @@ class CF(object):
 
 	def create_top_M(self):
 		query_top_m = Gis().select().order_by(Gis.similarity_value.desc())
-
 		top_m = []
 		for r in query_top_m:
-			# print r.movie_a, r.movie_b, r.similarity_value
 			if (r.movie_a not in top_m):
 				top_m.append(r.movie_a)
 
 			if (r.movie_b not in top_m):
 				top_m.append(r.movie_b)
-
 			if (len(top_m) == self.M):
 				break
-		
 		return top_m
 
 	def doSmoothing(self):
@@ -215,7 +152,13 @@ class CF(object):
 					pembilang +=  self.calc_RCui(cluster, item) * (self.user_item[user][item] - av_rating)
 					sum_rcui += self.calc_RCui(cluster, item) ** 2 
 					sum_rui += (self.user_item[user][item] - av_rating) **2
-				sim = pembilang / ((math.sqrt(sum_rcui) * math.sqrt(sum_rui)) + .00000000001)
+
+				penyebut = math.sqrt(sum_rcui) * math.sqrt(sum_rui)
+				if (penyebut > 0):
+					sim = pembilang / penyebut
+				else:
+					sim = 0
+
 				self.iCluster[user][cluster] = self.iCluster[user][cluster]._replace(sim = sim)
 
 				#save to database
@@ -224,7 +167,6 @@ class CF(object):
 			self.iCluster[user] = sorted(self.iCluster[user],reverse=True)
 
 	
-
 	"""
 	===================== Fusing ========================
 	"""
@@ -299,8 +241,8 @@ class CF(object):
 
 	def request(self, active_user, active_item):
 		# parameter fusing
-		g = .05
-		l = .002
+		g = .5
+		l = .5
 
 		# calculate SIR' SUR' and SUIR' for predicition rating
 		SIR = self.calc_SIR(active_user,active_item)
@@ -371,24 +313,24 @@ class CF(object):
 
 
 if __name__ == "__main__":
-	cf = CF(max_user=50,max_movie=50,K=10,M=10)
-	# cf.learning()
+	cf = CF(max_user=200,max_movie=300,K=10,M=30)
+	cf.learning()
 	
 	# print_matrix("USER-ITEM",cf.user_item)
 	
 	# """TESTING"""
-	active_user = 1
-	cf.construct_local_matrix(active_user=active_user)
+	# active_user = 1
+	# cf.construct_local_matrix(active_user=active_user)
 	
-	max_test = 15
-	sum_mae = 0
-	rating_query = Rating_test.select().where(Rating_test.user_id==active_user).order_by(Rating_test.user_id.asc()).limit(max_test)
-	for r in rating_query:
-		result = cf.request(active_user=active_user, active_item=r.movie_id)
-		print "user = {user} | movie = {movie}".format(user=active_user, movie=r.movie_id)
-		print "SIR = {SIR} | SUR = {SUR} | SUIR = {SUIR}".format(SIR=result['SIR'],SUR=result['SUR'],SUIR=result['SUIR'])
-		print "real = {real} | prediction = {pred}\n".format(real=r.rating_value,pred=result['prediction'])
-		sum_mae += abs(r.rating_value - result['prediction'])
+	# max_test = 15
+	# sum_mae = 0
+	# rating_query = Rating_test.select().where(Rating_test.user_id==active_user).order_by(Rating_test.user_id.asc()).limit(max_test)
+	# for r in rating_query:
+	# 	result = cf.request(active_user=active_user, active_item=r.movie_id)
+	# 	print "user = {user} | movie = {movie}".format(user=active_user, movie=r.movie_id)
+	# 	print "SIR = {SIR} | SUR = {SUR} | SUIR = {SUIR}".format(SIR=result['SIR'],SUR=result['SUR'],SUIR=result['SUIR'])
+	# 	print "real = {real} | prediction = {pred}\n".format(real=r.rating_value,pred=result['prediction'])
+	# 	sum_mae += abs(r.rating_value - result['prediction'])
 
-	MAE = float(sum_mae) / max_test
-	print "MAE = {mae}".format(mae=MAE)
+	# MAE = float(sum_mae) / max_test
+	# print "MAE = {mae}".format(mae=MAE)

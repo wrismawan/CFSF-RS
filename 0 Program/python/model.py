@@ -16,10 +16,7 @@ class Movie(pw.Model):
 		database = db
 
 class User(pw.Model):
-<<<<<<< HEAD
-=======
 	id = pw.IntegerField()
->>>>>>> 0bf2e0524bfe78700e800f0a6d01e7902dc7eb4e
 	user_id = pw.IntegerField()
 	age = pw.IntegerField()
 	occupation = pw.CharField()
@@ -34,8 +31,6 @@ class Rating(pw.Model):
 	rating_value = pw.IntegerField()
 	
 	class Meta:
-<<<<<<< HEAD
-=======
 		database = db
 
 class Rating_base(pw.Model):
@@ -88,5 +83,4 @@ class Test(pw.Model):
 	time = pw.TimeField()
 
 	class Meta:
->>>>>>> 0bf2e0524bfe78700e800f0a6d01e7902dc7eb4e
 		database = db
