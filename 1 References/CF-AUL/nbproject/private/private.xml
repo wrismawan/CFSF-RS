@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/TA%20SUKSES/COLLABORATIVE%20FILTERING/Program/CFv5/src/cfv5/CFv5.java</file>
-            <file>file:/E:/TA%20SUKSES/COLLABORATIVE%20FILTERING/Program/CFv5/src/cfv5/DataSmoothing.java</file>
-            <file>file:/E:/TA%20SUKSES/COLLABORATIVE%20FILTERING/Program/CFv5/src/cfv5/Kmeans.java</file>
-            <file>file:/E:/TA%20SUKSES/COLLABORATIVE%20FILTERING/Program/CFv5/src/cfv5/Koneksi.java</file>
-            <file>file:/E:/TA%20SUKSES/COLLABORATIVE%20FILTERING/Program/CFv5/src/cfv5/User.java</file>
-            <file>file:/E:/TA%20SUKSES/COLLABORATIVE%20FILTERING/Program/CFv5/src/cfv5/NeighborPreSelection.java</file>
+            <file>file:/media/wrismawan/Data/Work/cin-ta/1%20References/CF-AUL/src/prediksi10/NeighborPreSelection.java</file>
+            <file>file:/media/wrismawan/Data/Work/cin-ta/1%20References/CF-AUL/src/util/CFHelper.java</file>
+            <file>file:/media/wrismawan/Data/Work/cin-ta/1%20References/CF-AUL/src/prediksi10/DataSmoothing.java</file>
+            <file>file:/media/wrismawan/Data/Work/cin-ta/1%20References/CF-AUL/src/prediksi10/Prediksi10.java</file>
+            <file>file:/media/wrismawan/Data/Work/cin-ta/1%20References/CF-AUL/src/prediksi10/User.java</file>
+            <file>file:/media/wrismawan/Data/Work/cin-ta/1%20References/CF-AUL/src/prediksi10/Kmeans.java</file>
         </group>
     </open-files>
 </project-private>

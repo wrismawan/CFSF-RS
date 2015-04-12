@@ -138,7 +138,7 @@ ua.test       split the u data into a training set and a test set with
 ub.base       exactly 10 ratings per user in the test set.  The sets
 ub.test       ua.test and ub.test are disjoint.  These data sets can
               be generated from u.data by mku.sh.
-
+ 
 allbut.pl  -- The script that generates training and test sets where
               all but n of a users ratings are in the training data.
 
