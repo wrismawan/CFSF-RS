@@ -76,6 +76,7 @@ public class Kmeans {
         //Masukin rating item ke list user
         sql = "SELECT * FROM u1base";
         rs = db.getAll(sql);
+        
         while (rs.next()) {
             temp.get(Integer.parseInt(rs.getString("user_id"))).getItemList().put(Integer.parseInt(rs.getString("item_id")), Double.parseDouble(rs.getString("rating")));
             temp.get(Integer.parseInt(rs.getString("user_id"))).getKey().add(Integer.parseInt(rs.getString("item_id")));
