@@ -38,21 +38,32 @@ def calc_rcui(user_cluster, item):
                 rcui += float(users[unicode(user)][item] - users[unicode(user)][-1])
         return rcui / len(listCluster[user_cluster])
 
-items = get_intersected(id_user=1, num_cluster=0)
 
-def sim(user_id, num_cluster):
+def sim(user_id, num_cluster, items):
     sum = sum_rcui = sum_diff = 0
     for item in items:
         rcui = calc_rcui(num_cluster, item)
         diff = (users[str(user_id)][item] - users[str(user_id)][-1])
-
         sum += rcui * diff
         sum_rcui += rcui ** 2
         sum_diff += diff ** 2
-
     import math
     return sum / (math.sqrt(sum_rcui) * math.sqrt(sum_diff))
 
+icluster = {}
 for user_id in users:
-    print sim(user_id=user_id, num_cluster=1)
+    for num_cluster in xrange(len(listCluster)):
+        items = get_intersected(id_user=1, num_cluster=0)
+        similarity = sim(user_id=user_id, num_cluster=num_cluster, items=items)
+        if (user_id not in icluster):
+            icluster[user_id] = []
+        icluster[user_id].append([similarity, num_cluster])
+        print "sim(user={user}, cluster={num_cluster}) = {sim}".format(user=user_id, num_cluster=num_cluster, sim=similarity)
+
+    icluster[user_id] = sorted(icluster[user_id], reverse=True)
+
+for c in icluster:
+    print c, icluster[c]
+
+
 

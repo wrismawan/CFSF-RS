@@ -14,6 +14,7 @@ class smoothing(object):
                 rcui += float(self.users[unicode(user)][item] - self.users[unicode(user)][-1])
         return rcui / len(self.listCluster[user_cluster])
 
+
     def data_smoothing(self):
         for user_id in self.users:
             for item in xrange(1,len(self.users[user_id])-1):
@@ -39,6 +40,6 @@ class smoothing(object):
         return I
 
 
-    def save_result(self):
-        mylib.writeJSON(json.dumps(self.users),"output/users_50_clustered_smoothed.txt")
+    def save_result(self, fileName):
+        mylib.writeJSON(json.dumps(self.users),fileName)
         print "result smoothing : saved"
