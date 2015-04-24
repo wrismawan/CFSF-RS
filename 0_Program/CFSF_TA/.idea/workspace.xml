@@ -2,202 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d682db7-324c-4b46-b58f-6f94fbc91304" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/util/CFHelper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/Centroid.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/DataSmoothing.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/Kmeans.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/NeighborPreSelection.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/NeighborSelection.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/Prediction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/Prediksi10.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/User.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/wr.base" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/wr.test" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/util/CFHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/CFSF_TA.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/output/GIS.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GIS.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/NeighborPreSelection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/NeighborSelection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/Prediction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/Prediksi10.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/calc_average.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cf_db.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cfsf.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/clustering.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/connection.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/output/dummy_user_cluster.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/output/dummy_user_item.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gis.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kmeans.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/mku2.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/model.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mylib.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rating.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/result_cluster_C_50.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smoothing.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test_clustering.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/test_icluster.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/output/user_cluster.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/output/user_cluster_fix.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/user_item.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/output/user_item_smoothed.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../old_python/output/user_item_smoothing.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/user_test.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/users_50.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/users_50_clustered.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/users_50_clustered_smoothed.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\0 Program\python\cf.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\0 Program\python\output\GIS.csv" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\0 Program\python\output\user_cluster.csv" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\0 Program\python\output\user_item_smoothed.csv" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\build\classes\cfv5\CFv5.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\build\classes\cfv5\Centroid.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\build\classes\cfv5\DataSmoothing.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\build\classes\cfv5\Kmeans.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\build\classes\cfv5\NeighborPreSelection.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\build\classes\cfv5\User.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\src\cfv5\CFv5.java" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\src\cfv5\NeighborPreSelection.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/.netbeans_automatic_build" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/.netbeans_automatic_build" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/.netbeans_update_resources" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/.netbeans_update_resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/A collaborative filtering framework based on both local user similarity and global user similarity.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/A collaborative filtering framework based on both local user similarity and global user similarity.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/CRUC Cold-start Recommendations Using Collaborative.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/CRUC Cold-start Recommendations Using Collaborative.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/Collaborative Filtering Recommendation Algorithm Based on Item Clustering and Global Similarity.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/Collaborative Filtering Recommendation Algorithm Based on Item Clustering and Global Similarity.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/Collaborative Filtering Recommendation Algorithm Based on Item Clustering and User Clustering.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/Collaborative Filtering Recommendation Algorithm Based on Item Clustering and User Clustering.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/Collaborative Filtering Recommendation Algorithm based on Semantic Similarity of Item.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/Collaborative Filtering Recommendation Algorithm based on Semantic Similarity of Item.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../3 Dependencies/Composer-Setup.exe" afterPath="$PROJECT_DIR$/../../3 Dependencies/Composer-Setup.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/FnT CF Recsys Survey.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/FnT CF Recsys Survey.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../3 Dependencies/MySQL-python-1.2.5.win32-py2.7.exe" afterPath="$PROJECT_DIR$/../../3 Dependencies/MySQL-python-1.2.5.win32-py2.7.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/SCBPCC.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/SCBPCC.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/paper/Scalable Collaborative Filtering Using Cluster-based and Smoothing.pdf" afterPath="$PROJECT_DIR$/../../1 References/paper/Scalable Collaborative Filtering Using Cluster-based and Smoothing.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../3 Dependencies/python-2.7.8 (1).msi" afterPath="$PROJECT_DIR$/../../3 Dependencies/python-2.7.8 (1).msi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/README" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/allbut.pl" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/allbut.pl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/build-impl.xml" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/build-impl.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/build.xml" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../old_python/cf.py" afterPath="$PROJECT_DIR$/../old_python/cf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/genfiles.properties" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/genfiles.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../3 Dependencies/get-pip.py" afterPath="$PROJECT_DIR$/../../3 Dependencies/get-pip.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/manifest.mf" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/manifest.mf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/mku.sh" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/mku.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/private/private.properties" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/private/private.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/private/private.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/project.properties" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/project.xml" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/nbproject/project.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.data" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.genre" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.genre" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.info" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.item" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.item" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.occupation" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.occupation" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.user" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u.user" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u1.base" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u1.base" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u1.test" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u1.test" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u2.base" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u2.base" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u2.test" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u2.test" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u3.base" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u3.base" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u3.test" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u3.test" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u4.base" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u4.base" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u4.test" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u4.test" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u5.base" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u5.base" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u5.test" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/u5.test" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\cf_db.sql" afterPath="$PROJECT_DIR$/../old_cf_db.sql" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\connection.py" afterPath="$PROJECT_DIR$/connection.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\cosine_similarity.py" afterPath="$PROJECT_DIR$/../old_python/cosine_similarity.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\create_dataset.py" afterPath="$PROJECT_DIR$/../old_python/create_dataset.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\data_to_csv.py" afterPath="$PROJECT_DIR$/../old_python/data_to_csv.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\input\test.base" afterPath="$PROJECT_DIR$/../old_python/input/test.base" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\input\u.base" afterPath="$PROJECT_DIR$/../old_python/input/u.base" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\input\u.test" afterPath="$PROJECT_DIR$/../old_python/input/u.test" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\k-means\dogs.csv" afterPath="$PROJECT_DIR$/../old_python/k-means/dogs.csv" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\k-means\kmeans.py" afterPath="$PROJECT_DIR$/../old_python/k-means/kmeans.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\k-means\mpg.txt" afterPath="$PROJECT_DIR$/../old_python/k-means/mpg.txt" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\kmeans.py" afterPath="$PROJECT_DIR$/../old_python/kmeans.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\model.py" afterPath="$PROJECT_DIR$/model.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\mylib.py" afterPath="$PROJECT_DIR$/../old_python/mylib.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\pearson.py" afterPath="$PROJECT_DIR$/../old_python/output/test.csv" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\sample_data.py" afterPath="$PROJECT_DIR$/../old_python/sample_data.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\python\test.py" afterPath="$PROJECT_DIR$/../old_python/pearson.py" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\.gitattributes" afterPath="$PROJECT_DIR$/../web/.gitattributes" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\.gitignore" afterPath="$PROJECT_DIR$/../web/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\CONTRIBUTING.md" afterPath="$PROJECT_DIR$/../web/CONTRIBUTING.md" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\commands\.gitkeep" afterPath="$PROJECT_DIR$/../web/app/commands/.gitkeep" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\app.php" afterPath="$PROJECT_DIR$/../web/app/config/app.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\auth.php" afterPath="$PROJECT_DIR$/../web/app/config/auth.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\cache.php" afterPath="$PROJECT_DIR$/../web/app/config/cache.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\compile.php" afterPath="$PROJECT_DIR$/../web/app/config/compile.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\database.php" afterPath="$PROJECT_DIR$/../web/app/config/database.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\local\app.php" afterPath="$PROJECT_DIR$/../web/app/config/local/app.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\local\database.php" afterPath="$PROJECT_DIR$/../web/app/config/local/database.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\mail.php" afterPath="$PROJECT_DIR$/../web/app/config/mail.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\packages\.gitkeep" afterPath="$PROJECT_DIR$/../web/app/config/packages/.gitkeep" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\queue.php" afterPath="$PROJECT_DIR$/../web/app/config/queue.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\remote.php" afterPath="$PROJECT_DIR$/../web/app/config/remote.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\services.php" afterPath="$PROJECT_DIR$/../web/app/config/services.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\session.php" afterPath="$PROJECT_DIR$/../web/app/config/session.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\testing\cache.php" afterPath="$PROJECT_DIR$/../web/app/config/testing/cache.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\testing\session.php" afterPath="$PROJECT_DIR$/../web/app/config/testing/session.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\view.php" afterPath="$PROJECT_DIR$/../web/app/config/view.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\config\workbench.php" afterPath="$PROJECT_DIR$/../web/app/config/workbench.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\controllers\.gitkeep" afterPath="$PROJECT_DIR$/../web/app/controllers/.gitkeep" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\controllers\BaseController.php" afterPath="$PROJECT_DIR$/../web/app/controllers/BaseController.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\controllers\HomeController.php" afterPath="$PROJECT_DIR$/../web/app/controllers/HomeController.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\database\.gitignore" afterPath="$PROJECT_DIR$/../web/app/database/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\database\migrations\.gitkeep" afterPath="$PROJECT_DIR$/../web/app/database/migrations/.gitkeep" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\database\seeds\.gitkeep" afterPath="$PROJECT_DIR$/../web/app/database/seeds/.gitkeep" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\database\seeds\DatabaseSeeder.php" afterPath="$PROJECT_DIR$/../web/app/database/seeds/DatabaseSeeder.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\filters.php" afterPath="$PROJECT_DIR$/../web/app/filters.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\lang\en\pagination.php" afterPath="$PROJECT_DIR$/../web/app/lang/en/pagination.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\lang\en\reminders.php" afterPath="$PROJECT_DIR$/../web/app/lang/en/reminders.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\lang\en\validation.php" afterPath="$PROJECT_DIR$/../web/app/lang/en/validation.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\models\User.php" afterPath="$PROJECT_DIR$/../web/app/models/User.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\routes.php" afterPath="$PROJECT_DIR$/../web/app/routes.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\start\artisan.php" afterPath="$PROJECT_DIR$/../web/app/start/artisan.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\start\global.php" afterPath="$PROJECT_DIR$/../web/app/start/global.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\start\local.php" afterPath="$PROJECT_DIR$/../web/app/start/local.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\storage\.gitignore" afterPath="$PROJECT_DIR$/../web/app/storage/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\storage\cache\.gitignore" afterPath="$PROJECT_DIR$/../web/app/storage/cache/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\storage\logs\.gitignore" afterPath="$PROJECT_DIR$/../web/app/storage/logs/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\storage\meta\.gitignore" afterPath="$PROJECT_DIR$/../web/app/storage/meta/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\storage\sessions\.gitignore" afterPath="$PROJECT_DIR$/../web/app/storage/sessions/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\storage\views\.gitignore" afterPath="$PROJECT_DIR$/../web/app/storage/views/.gitignore" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\tests\ExampleTest.php" afterPath="$PROJECT_DIR$/../web/app/tests/ExampleTest.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\tests\TestCase.php" afterPath="$PROJECT_DIR$/../web/app/tests/TestCase.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\views\emails\auth\reminder.blade.php" afterPath="$PROJECT_DIR$/../web/app/views/emails/auth/reminder.blade.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\app\views\hello.php" afterPath="$PROJECT_DIR$/../web/app/views/hello.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\artisan" afterPath="$PROJECT_DIR$/../web/artisan" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\bootstrap\autoload.php" afterPath="$PROJECT_DIR$/../web/bootstrap/autoload.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\bootstrap\paths.php" afterPath="$PROJECT_DIR$/../web/bootstrap/paths.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\bootstrap\start.php" afterPath="$PROJECT_DIR$/../web/bootstrap/start.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\cinta_db.sql" afterPath="$PROJECT_DIR$/../web/cinta_db.sql" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\composer.json" afterPath="$PROJECT_DIR$/../web/composer.json" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\phpunit.xml" afterPath="$PROJECT_DIR$/../web/phpunit.xml" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\public\.htaccess" afterPath="$PROJECT_DIR$/../web/public/.htaccess" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\public\favicon.ico" afterPath="$PROJECT_DIR$/../web/public/favicon.ico" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\public\index.php" afterPath="$PROJECT_DIR$/../web/public/index.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\public\packages\.gitkeep" afterPath="$PROJECT_DIR$/../web/public/packages/.gitkeep" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\public\robots.txt" afterPath="$PROJECT_DIR$/../web/public/robots.txt" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\readme.md" afterPath="$PROJECT_DIR$/../web/readme.md" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\0 Program\web\server.php" afterPath="$PROJECT_DIR$/../web/server.php" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\build\classes\cfv5\Koneksi.class" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/build/classes/prediksi10/Koneksi.class" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\src\cfv5\Centroid.java" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/Centroid.java" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\src\cfv5\DataSmoothing.java" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/DataSmoothing.java" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\src\cfv5\Kmeans.java" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/Kmeans.java" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\src\cfv5\Koneksi.java" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/Koneksi.java" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\1 References\CF-AUL\src\cfv5\User.java" afterPath="$PROJECT_DIR$/../../1 References/CF-AUL/src/prediksi10/User.java" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\2 Datasets\ml-100k\ua.base" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/tmp/ua.base" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\2 Datasets\ml-100k\ua.test" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/tmp/ua.test" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\2 Datasets\ml-100k\ub.base" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/tmp/ub.base" />
-      <change type="MOVED" beforePath="E:\Work\cin-ta\2 Datasets\ml-100k\ub.test" afterPath="$PROJECT_DIR$/../../2 Datasets/ml-100k/tmp/ub.test" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/result_cluster_C_50.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/users_50_clustered.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/users_50_clustered_smoothed.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CFSF_TA.iml" afterPath="$PROJECT_DIR$/.idea/CFSF_TA.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cfsf.py" afterPath="$PROJECT_DIR$/cfsf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smoothing.py" afterPath="$PROJECT_DIR$/smoothing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_icluster.py" afterPath="$PROJECT_DIR$/test/test_icluster.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CFSF_TA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -239,8 +52,8 @@
       <file leaf-file-name="test_icluster.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_icluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8761062" vertical-offset="0" max-vertical-offset="585">
-              <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.60264903" vertical-offset="356" max-vertical-offset="960">
+              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
               <folding>
                 <element signature="e#20#37#0" expanded="true" />
               </folding>
@@ -248,11 +61,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="rating.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rating.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="smoothing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smoothing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="720">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="cfsf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cfsf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -261,8 +94,8 @@
       <file leaf-file-name="kmeans.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kmeans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2535">
-              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="2535">
+              <caret line="117" column="58" selection-start-line="117" selection-start-column="58" selection-end-line="117" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -281,13 +114,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cfsf.py" />
         <option value="$PROJECT_DIR$/output/icluster.py" />
         <option value="$PROJECT_DIR$/icluster.py" />
-        <option value="$PROJECT_DIR$/smoothing.py" />
         <option value="$PROJECT_DIR$/test/icluster.py" />
         <option value="$PROJECT_DIR$/clustering.py" />
         <option value="$PROJECT_DIR$/kmeans.py" />
+        <option value="$PROJECT_DIR$/cfsf.py" />
+        <option value="$PROJECT_DIR$/smoothing.py" />
         <option value="$PROJECT_DIR$/test/test_icluster.py" />
       </list>
     </option>
@@ -297,7 +130,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="width" value="1366" />
-    <option name="height" value="738" />
+    <option name="height" value="743" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -344,6 +177,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CFSF_TA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CFSF_TA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CFSF_TA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CFSF_TA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -352,12 +213,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="LayoutCode.rearrangeEntriesPython" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -465,61 +327,6 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CFSF_TA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CFSF_TA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CFSF_TA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -545,83 +352,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CFSF_TA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CFSF_TA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CFSF_TA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CFSF_TA" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -644,7 +374,85 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CFSF_TA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CFSF_TA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CFSF_TA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CFSF_TA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="cfsf" type="PythonConfigurationType" factoryName="Python">
@@ -711,30 +519,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="738" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="743" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32465544" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16309342" sideWeight="0.6039604" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16309342" sideWeight="0.3960396" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993808" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24633431" sideWeight="0.39628482" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24633431" sideWeight="0.6037152" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31891495" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -763,13 +571,19 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2535">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/clustering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="663">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#25#38#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -777,9 +591,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="391">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#49#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -795,9 +607,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="2873">
           <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -813,10 +623,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="680">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#19#31#0" expanded="false" />
-            <marker date="1428806779714" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -836,9 +643,6 @@
           <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output/user_test.txt">
@@ -860,9 +664,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1940" max-vertical-offset="2535">
           <caret line="147" column="13" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -870,7 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -878,9 +679,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#49#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -888,9 +687,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="630">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#25#49#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -898,9 +695,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="2625">
           <caret line="26" column="16" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -931,9 +726,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="120">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#49#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -949,9 +742,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="3150">
           <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -959,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1818">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,9 +764,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="144">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#49#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -992,9 +780,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="2625">
           <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1515">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,9 +802,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="120">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#49#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,9 +818,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1796" max-vertical-offset="2625">
           <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1515">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,9 +840,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="120">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#49#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,18 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rating.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="585">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1515">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,13 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/users_50_clustered_smoothed.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/connection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153">
@@ -1139,9 +902,6 @@
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output/user_test.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1151,29 +911,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smoothing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="600">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#19#31#0" expanded="false" />
-            <marker date="1428806779714" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cfsf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kmeans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2535">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1200" max-vertical-offset="2535">
+          <caret line="117" column="58" selection-start-line="117" selection-start-column="58" selection-end-line="117" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1186,10 +927,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cfsf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rating.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smoothing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="720">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_icluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8761062" vertical-offset="0" max-vertical-offset="585">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.60264903" vertical-offset="356" max-vertical-offset="960">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
             <element signature="e#20#37#0" expanded="true" />
           </folding>
