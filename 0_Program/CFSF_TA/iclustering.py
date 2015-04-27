@@ -40,7 +40,9 @@ class icluster(object):
         for item in items:
             rcui = self.calc_rcui(num_cluster, item)
             diff = (self.users[str(user_id)][item] - self.users[str(user_id)][-1])
+
             sum += rcui * diff
+
             sum_rcui += rcui ** 2
             sum_diff += diff ** 2
 

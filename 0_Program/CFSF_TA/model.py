@@ -72,6 +72,15 @@ class Gis(pw.Model):
 	class Meta:
 		database = db
 
+class Test_gis(pw.Model):
+	id = pw.IntegerField()
+	movie_a = pw.IntegerField()
+	movie_b = pw.IntegerField()
+	similarity_value = pw.DoubleField()
+
+	class Meta:
+		database = db
+
 class Icluster(pw.Model):
 	id = pw.IntegerField()
 	user_id = pw.IntegerField()

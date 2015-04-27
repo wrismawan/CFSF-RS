@@ -15,6 +15,11 @@ class smoothing(object):
         return rcui / len(self.listCluster[user_cluster])
 
 
+    def update_average(self, user_id):
+        l = [i for i in self.users[unicode(user_id)] if self.users[unicode(user_id)] > 0]
+        av = float(sum(l))/len(l)
+        self.users[unicode(user_id)][-1] = av
+
     def data_smoothing(self):
         for user_id in self.users:
             for item in xrange(1,len(self.users[user_id])-1):
@@ -23,6 +28,9 @@ class smoothing(object):
                     rcui = self.calc_rcui(user_cluster, item)
                     self.users[user_id][item] = self.users[user_id][-1] + rcui
                     print "{0} - {1} : {2}".format(user_id, item, self.users[user_id][item])
+
+            self.update_average(user_id)
+
         print "Smoothing : Finished"
 
 

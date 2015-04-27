@@ -29,5 +29,5 @@ class clustering(object):
         import json
         mylib.writeJSON(json.dumps(users),"output/users_50_clustered.txt")
 
-    def get_cluster(self):
-        return mylib.readFromCSV("output/result_cluster_C_50.csv")
+    def get_cluster(self,fileName):
+        return mylib.readFromCSV(fileName)

@@ -74,3 +74,18 @@ def pearsonr(x, y):
   den = pow((sum_x_sq - pow(sum_x, 2) / n) * (sum_y_sq - pow(sum_y, 2) / n), 0.5)
   if den == 0: return 0
   return num / den
+
+import model #get top M for Test GIS
+def get_top_m(item_active, M):
+    query_m = model.Test_gis()\
+                .select()\
+                .where(model.Test_gis.movie_a == item_active)\
+                .order_by(model.Test_gis.similarity_value.desc())\
+                .limit(M)
+
+    top_m = {}
+    for m in query_m:
+        top_m[m.movie_b] = m.similarity_value
+
+    return top_m
+    # return [m.movie_b for m in query_m]

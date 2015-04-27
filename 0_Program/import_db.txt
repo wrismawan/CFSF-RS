@@ -1,0 +1,9 @@
+load data local infile '/home/whr/result_gis.csv' into table gis
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+('movie_a', 'movie_b', 'similarity_value');
+
+LOAD DATA LOCAL INFILE '/home/whr/result_gis.csv' INTO TABLE cf_db.gis FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
+mysqlimport --fields-terminated-by=, --verbose --local -h 127.0.0.1 -u root -p cf_db gis.csv

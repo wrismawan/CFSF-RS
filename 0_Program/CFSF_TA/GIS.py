@@ -14,18 +14,23 @@ class GIS(object) :
         del item_user[-1]
         return item_user
 
+
     def run(self):
         result = []
         item_user = self.transpose(self.user_item)
+        ctr = 1
         for i in xrange(1,len(item_user)):
             for j in xrange(1,i):
                 sim = mylib.pearsonr(item_user[i], item_user[j])
-                result.append([i,j,sim])
-                result.append([j,i,sim])
-                print "sim({i},{j}) = {sim}".format(i=i,j=j,sim=sim)
+                if sim > -9999:
+                    result.append([ctr, i,j,sim])
+                    ctr += 1
+                    result.append([ctr, j,i,sim])
+                    ctr += 1
+                    print "sim({i},{j}) = {sim}".format(i=i,j=j,sim=sim)
         self.result = sorted(result)
 
-    def save_result(self):
-        mylib.writeToCSV(self.result,"output/result_gis.csv")
+    def save_result(self, fileName):
+        mylib.writeToCSV(self.result,fileName)
         print "GIS result saved"
 
