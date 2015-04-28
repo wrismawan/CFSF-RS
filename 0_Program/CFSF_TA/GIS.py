@@ -22,7 +22,7 @@ class GIS(object) :
         for i in xrange(1,len(item_user)):
             for j in xrange(1,i):
                 sim = mylib.pearsonr(item_user[i], item_user[j])
-                if sim > -9999:
+                if sim >= 0.1:
                     result.append([ctr, i,j,sim])
                     ctr += 1
                     result.append([ctr, j,i,sim])

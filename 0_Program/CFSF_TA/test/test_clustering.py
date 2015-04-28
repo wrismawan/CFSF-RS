@@ -4,30 +4,11 @@ __author__ = 'wrismawan'
 
 import mylib
 import kmeans
+import clustering as cs
 
-users = mylib.readJSON("../output/user_test.txt")
+users = mylib.readJSON("../output/users_50.txt")
 
+cluster = cs.clustering(dataUser=users, C=50)
+cluster.run()
+cluster.save_result("../output/result_cluster_for_aul.csv")
 
-matrix_input = mylib.JSON2Matrix(users)
-
-kmeans = kmeans.kClusterer(matrix_input,2)
-
-kmeans.run()
-
-list_cluster = kmeans.listCluster()
-
-print list_cluster
-
-num = 0
-for cluster in list_cluster:
-    for u in cluster:
-        users[unicode(u)][0] = num
-        print u, users[unicode(u)]
-    num += 1
-
-mylib.print_matrix("USER",matrix_input)
-#
-# print mylib.pearsonr(matrix_input[0][1:],matrix_input[1][1:])
-#
-# from numpy import corrcoef
-# print corrcoef(matrix_input[0][1:],matrix_input[1][1:])

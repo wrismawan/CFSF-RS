@@ -1,0 +1,1 @@
+mysqlimport --fields-terminated-by=, --verbose --local -u root -p cf_db gis.csv

@@ -14,12 +14,13 @@ class clustering(object):
         self.listCluster = k.listCluster()
         return self.listCluster
 
-    def save_result(self):
-        mylib.writeToCSV(self.listCluster, "output/result_cluster_C_{0}.csv".format(self.C))
+    def save_result(self, fileName):
+        # mylib.writeToCSV(self.listCluster, "output/result_cluster_C_{0}.csv".format(self.C))
+        mylib.writeToCSV(self.listCluster, fileName)
 
-    def set_user_cluster(self):
-        users = mylib.readJSON("output/users_50.txt")
-        self.list_cluster = mylib.readFromCSV("output/result_cluster_C_50.csv")
+    def set_user_cluster(self, fileUser, fileCluster, fileOutput):
+        users = mylib.readJSON(fileUser)
+        self.list_cluster = mylib.readFromCSV(fileCluster)
 
         num = 0
         for cluster in self.list_cluster:
@@ -27,7 +28,7 @@ class clustering(object):
                 users[unicode(u)][0] = num
             num += 1
         import json
-        mylib.writeJSON(json.dumps(users),"output/users_50_clustered.txt")
+        mylib.writeJSON(json.dumps(users),fileOutput)
 
-    def get_cluster(self,fileName):
-        return mylib.readFromCSV(fileName)
+    def get_cluster(self,fileCluster):
+        return mylib.readFromCSV(fileCluster)
