@@ -28,7 +28,12 @@ class fusing(object):
             self.local_matrix.sim_user[user_id] = self.local_matrix.calc_sim(self.user_active, user_id)
 
         sim_user = self.local_matrix.sim_user[user_id]
-        return (sim_item * sim_user) / (math.sqrt( sim_item ** 2 + sim_user ** 2 ))
+
+        den = (math.sqrt( sim_item ** 2 + sim_user ** 2 ))
+        if den == 0:
+            return 0
+        else:
+            return (sim_item * sim_user) / den
 
     def sir(self):
         num = den = 0
@@ -36,7 +41,8 @@ class fusing(object):
             w = self.param_w if (isinstance(self.users[unicode(self.user_active)][item_id],int) ) else 1 - self.param_w
             num += w * self.top_m[item_id] * self.users[unicode(self.user_active)][item_id]
             den += w * self.top_m[item_id]
-        return num / den
+
+        return 0 if den == 0 else num / den
 
     def sur(self):
         num = den = 0
@@ -44,7 +50,11 @@ class fusing(object):
             w = self.param_w if (isinstance(self.users[unicode(user_id)][self.item_active],int) ) else 1 - self.param_w
             num += w * self.local_matrix.sim_user[user_id] * (self.users[unicode(user_id)][self.item_active] - self.users[unicode(user_id)][-1])
             den += w * self.local_matrix.sim_user[user_id]
-        return (num / den) + self.users[unicode(self.user_active)][-1]
+
+        if den == 0:
+            return self.users[unicode(self.user_active)][-1]
+        else:
+            return (num / den) + self.users[unicode(self.user_active)][-1]
 
     #SUIR
     def suir(self):
@@ -55,7 +65,11 @@ class fusing(object):
                 sim = self.sim_ui(user_id, item_id)
                 num += w * sim * self.users[unicode(user_id)][item_id]
                 den += w * sim
-        return num / den
+
+        if den == 0:
+            return 0
+        else:
+            return num / den
 
     #Fusion
     def run(self):

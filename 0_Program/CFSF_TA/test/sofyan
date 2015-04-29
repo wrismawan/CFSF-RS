@@ -1,0 +1,4 @@
+import math
+
+print "hello"
+print math.sqrt(9)

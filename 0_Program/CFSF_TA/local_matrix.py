@@ -1,9 +1,9 @@
 __author__ = 'whr'
 import math
 import model
-
+import mylib
 class local_matrix(object):
-    def __init__(self, users, user_active, item_active, M, K, listCluster, icluster):
+    def __init__(self, users, user_active, item_active, M, K, listCluster, icluster, GUS):
         self.users          = users
         self.M              = M
         self.K              = K
@@ -16,6 +16,8 @@ class local_matrix(object):
 
 
         self.sim_user       = {}
+        self.GUS = GUS
+
 
     def calc_sim(self, user_a, user_b):
         param_w = 0.2
@@ -43,8 +45,8 @@ class local_matrix(object):
         for num_cluster in [c[1] for c in self.icluster[unicode(user_active)]]:
             for current_user in self.listCluster[num_cluster]:
                 if (current_user != user_active):
-                    sim = self.calc_sim(user_active, current_user)
-
+                    # sim = self.calc_sim(user_active, current_user)
+                    sim = self.GUS[user_active][current_user]
                     if (current_user not in self.sim_user):
                         self.sim_user[current_user] = sim
 
