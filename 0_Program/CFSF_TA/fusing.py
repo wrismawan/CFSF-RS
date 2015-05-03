@@ -2,7 +2,7 @@ __author__ = 'whr'
 import math
 import mylib
 class fusing(object):
-    def __init__(self, local_matrix, param):
+    def __init__(self, local_matrix, param, GUS):
         self.param_w        = param["w"]
         self.g              = param["g"]
         self.l              = param["l"]
@@ -15,6 +15,7 @@ class fusing(object):
 
         self.top_k          = local_matrix.get_top_k()
         self.top_m          = local_matrix.get_top_m()
+        self.GUS            = GUS
 
         # self.top_m = mylib.get_top_m(item_active=self.item_active, M=3)
 
@@ -25,7 +26,8 @@ class fusing(object):
         sim_item = self.top_m[item_id]
 
         if (user_id not in self.local_matrix.sim_user):
-            self.local_matrix.sim_user[user_id] = self.local_matrix.calc_sim(self.user_active, user_id)
+            # self.local_matrix.sim_user[user_id] = self.local_matrix.calc_sim(self.user_active, user_id)
+            self.local_matrix.sim_user[user_id] = self.GUS[self.user_active, user_id]
 
         sim_user = self.local_matrix.sim_user[user_id]
 

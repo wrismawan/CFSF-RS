@@ -52,7 +52,7 @@ def prediction(user_active, item_active, l, g, w):
                                    listCluster=listCluster,
                                    icluster=icluster, GUS=GUS)
 
-    fusion = fs.fusing(local_matrix=local_matrix, param={"l" : l, "g" : g, "w" : w})
+    fusion = fs.fusing(local_matrix=local_matrix, param={"l" : l, "g" : g, "w" : w}, GUS=GUS)
     prediction = fusion.run()
 
     # print "sur",fusion.SUR
@@ -119,5 +119,5 @@ for idx in r:
     count += 1
     num += abs(predict - r[unicode(idx)]["rating"])
 
-mae = num/count
+print num/count
 print "Time : %s seconds" %(time.time() - start_time)
