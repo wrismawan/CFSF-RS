@@ -22,11 +22,11 @@ class rating(object):
             users[r.user_id][r.movie_id] = r.rating_value
 
         for u in users:
-            # count_rated = len(users[u]) - users[u].count(0) - 1
-            # if (count_rated >= user_rated):
-            av = self.calc_average(users[u])
-            users[u].append(av)
-            self.users[u] = users[u]
+            count_rated = len(users[u]) - users[u].count(0) - 1
+            if (count_rated >= user_rated):
+                av = self.calc_average(users[u])
+                users[u].append(av)
+                self.users[u] = users[u]
 
         mylib.writeJSON(json.dumps(self.users), fileName)
 

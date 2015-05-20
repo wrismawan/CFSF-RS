@@ -72,7 +72,7 @@ class Gis(pw.Model):
 	class Meta:
 		database = db
 
-class Test_gis(pw.Model):
+class Gis_new(pw.Model):
 	id = pw.IntegerField()
 	movie_a = pw.IntegerField()
 	movie_b = pw.IntegerField()

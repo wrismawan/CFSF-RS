@@ -75,7 +75,8 @@ def pearsonr(x, y):
   if den == 0: return 0
   return num / den
 
-import model #get top M for Test GIS
+#get top M for Test GIS
+import model
 def get_top_m(item_active, M):
     query_m = model.Test_gis()\
                 .select()\
@@ -89,3 +90,7 @@ def get_top_m(item_active, M):
 
     return top_m
     # return [m.movie_b for m in query_m]
+
+def sort_dict(dict):
+    import collections
+    return collections.OrderedDict(sorted(dict.items()))
